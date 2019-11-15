@@ -1,0 +1,27 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  background: transparent;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+
+}
+
+.navbar-lewagon .navbar-brand img {
+  height: 75px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $zwhite;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+
+  &:hover {
+    color: $zblue;
+  }
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+    color: $zblue;
+}
+

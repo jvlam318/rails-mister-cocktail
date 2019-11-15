@@ -1,0 +1,11 @@
+<br>
+<br>
+<br>
+<h1> <%= @cocktail.name %> </h1>
+<h2>Composition</h2>
+
+<% @cocktail.doses.each do |dose| %>
+  <%= dose.ingredient.name %>
+<% end %>
+
+<%= link_to "add dose", new_cocktail_dose_path(@cocktail) %>

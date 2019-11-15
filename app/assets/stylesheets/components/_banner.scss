@@ -1,0 +1,21 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 70vh;
+}
+
+.banner h1 {
+  margin: 0;
+  color: $zwhite;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: $zwhite;
+  opacity: .8;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}

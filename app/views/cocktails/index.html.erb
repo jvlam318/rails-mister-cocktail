@@ -1,0 +1,19 @@
+
+<div class="banner" >
+  <div class="container">
+    <h1>Meola's all time <strong>classics</strong> and <strong>crowd favourites</strong>!</h1>
+    <p>Party like it's orientation day.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+           <%= cocktail.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
