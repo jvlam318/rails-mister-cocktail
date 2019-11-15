@@ -21,7 +21,7 @@ class DosesController < ApplicationController
   def destroy
     @dose = Dose.find(params[:id])
     @dose.destroy
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 
   private
