@@ -1,4 +1,11 @@
-<div class="banner2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>');">
+<% if @cocktail.photo.url %>
+  <% path = cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill  %>
+<% else %>
+  <% path = 'https://source.unsplash.com/1600x900/?alcohol' %>
+<% end %>
+
+
+<div class="banner2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= path %>');">
   <div class="container">
     <h1> <%= @cocktail.name %> </h1>
   </div>
@@ -8,7 +15,7 @@
 
   <% @cocktail.doses.each do |dose| %>
     <div class="card-product">
-      <img src="https://images.unsplash.com/photo-1534144778014-005455703c86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" />
+      <img src= 'https://source.unsplash.com/1600x900/?alcohol' />
       <div class="card-product-infos">
         <h2><%= dose.ingredient.name %></h2>
         <p><%= dose.description %></p>

@@ -9,7 +9,12 @@
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail) do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+        <% if cocktail.photo.url %>
+          <% path = cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill  %>
+        <% else %>
+          <% path = 'https://source.unsplash.com/1600x900/?alcohol' %>
+        <% end %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= path %>')">
            <%= cocktail.name %>
            <%= link_to '+', cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: 'card-remove-link'  %>
         </div>
